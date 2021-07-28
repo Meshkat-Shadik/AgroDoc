@@ -86,7 +86,17 @@ class ContainerWidget extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(48),
                     bottomLeft: Radius.circular(48),
-                  )),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                        offset: Offset(4, 0),
+                        color: Color.fromARGB(80, 0, 0, 0),
+                        blurRadius: 10),
+                    BoxShadow(
+                        offset: Offset(-4, -4),
+                        color: primaryBgColor,
+                        blurRadius: 10)
+                  ]),
               child: Row(
                 children: [
                   SizedBox(width: 20),
