@@ -9,34 +9,31 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryBgColor,
-      bottomNavigationBar: Stack(
-        alignment: Alignment.center,
-        clipBehavior: Clip.none,
-        children: [
-          Container(
-            color: bottomNavBgColor,
-            height: 50,
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(Icons.arrow_back_ios),
-                Icon(Icons.arrow_forward_ios),
-              ],
-            ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Container(
+        color: Colors.transparent,
+        height: 80,
+        width: 80,
+        child: FloatingActionButton(
+          elevation: 0,
+          onPressed: () {},
+          backgroundColor: Colors.transparent,
+          child: Image.asset(
+            "assets/images/user.png",
+            fit: BoxFit.fill,
           ),
-          Positioned(
-            top: -40,
-            child: CircleAvatar(
-              radius: 40,
-              backgroundColor: Colors.transparent,
-              child: Image.asset(
-                "assets/images/user.png",
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-        ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        color: bottomNavBgColor,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back_ios)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
+          ],
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
