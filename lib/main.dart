@@ -1,4 +1,3 @@
-import 'package:agro_doc/presentation/screens/home_screen.dart';
 import 'package:agro_doc/presentation/screens/splash_screen.dart';
 import 'package:agro_doc/routes/route_generator.dart';
 import 'package:flutter/material.dart';
