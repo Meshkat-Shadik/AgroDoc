@@ -13,3 +13,4 @@ const boxShadowColors = [
       offset: Offset(4, 0), color: Color.fromARGB(80, 0, 0, 0), blurRadius: 10),
   BoxShadow(offset: Offset(-4, -4), color: primaryBgColor, blurRadius: 10)
 ];
+

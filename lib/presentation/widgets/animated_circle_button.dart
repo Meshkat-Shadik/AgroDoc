@@ -24,17 +24,11 @@ class AnimatedCircleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        selected == position
-            ? AnimatedContainer(
-                curve: Curves.bounceOut,
-                duration: Duration(seconds: 1),
-                height: selected == position ? height : 0,
-              )
-            : AnimatedContainer(
-                curve: Curves.bounceIn,
-                duration: Duration(seconds: 1),
-                height: 0,
-              ),
+        AnimatedContainer(
+          curve: Curves.bounceOut,
+          duration: Duration(seconds: 1),
+          height: selected == position ? height : 0,
+        ),
         AnimatedContainer(
           duration: Duration(seconds: 1),
           decoration: BoxDecoration(
@@ -48,8 +42,6 @@ class AnimatedCircleButton extends StatelessWidget {
             bgColor:
                 selected == position ? activeButtonColor : inactiveButtonColor,
             onTap: onTap,
-            // Navigator.pushNamed(
-            //   context, AnimatedTest.pathId);
           ),
         ),
       ],
