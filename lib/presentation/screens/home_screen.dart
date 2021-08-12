@@ -25,8 +25,9 @@ class HomeScreen extends StatelessWidget {
             height: 80,
             width: 80,
             onTap: () {
-              AutoRouter.of(context)
-                  .push(InspectPageRoute(selectedIconIndex: 1));
+              // AutoRouter.of(context)
+              //     .push(InspectPageRoute(selectedIconIndex: 1));
+              context.router.push(InspectPageRoute(selectedIconIndex: 1));
             },
           ),
           ContainerWidget(
@@ -35,8 +36,9 @@ class HomeScreen extends StatelessWidget {
             height: 80,
             width: 80,
             onTap: () {
-              AutoRouter.of(context)
-                  .push(InspectPageRoute(selectedIconIndex: 2));
+              // AutoRouter.of(context)
+              //     .push(InspectPageRoute(selectedIconIndex: 2));
+              context.router.push(InspectPageRoute(selectedIconIndex: 2));
             },
           ),
           ContainerWidget(
@@ -45,8 +47,9 @@ class HomeScreen extends StatelessWidget {
             height: 80,
             width: 80,
             onTap: () {
-              AutoRouter.of(context)
-                  .push(InspectPageRoute(selectedIconIndex: 3));
+              // AutoRouter.of(context)
+              //     .push(InspectPageRoute(selectedIconIndex: 3));
+              context.router.push(InspectPageRoute(selectedIconIndex: 3));
             },
           ),
           SizedBox(height: 5),
