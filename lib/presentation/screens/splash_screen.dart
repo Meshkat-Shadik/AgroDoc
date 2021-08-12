@@ -26,7 +26,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryBgColor,
       body: Center(
         child: Column(
           children: [
@@ -44,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
               flex: 1,
               child: Text(
                 'AgriDoc',
-                style: GoogleFonts.lemonada(fontSize: 32),
+                style: TextStyle(fontSize: 32),
               ),
             ),
             Padding(

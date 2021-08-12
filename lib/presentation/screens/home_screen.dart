@@ -12,7 +12,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryBgColor,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: CustomFButton(),
       bottomNavigationBar: MyBottomNavigationBar(),
@@ -101,7 +100,7 @@ class ContainerWidget extends StatelessWidget {
                     SizedBox(width: 10),
                     Text(
                       title ?? "",
-                      style: GoogleFonts.lemonada(fontSize: 18),
+                      style: TextStyle(fontSize: 18),
                     ),
                   ],
                 ),

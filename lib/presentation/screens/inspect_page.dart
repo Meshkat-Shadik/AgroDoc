@@ -27,7 +27,6 @@ class _InspectPageState extends State<InspectPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: primaryBgColor,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: CustomFButton(),
       bottomNavigationBar: MyBottomNavigationBar(),
@@ -155,7 +154,7 @@ class InspectPageContainer extends StatelessWidget {
             SizedBox(width: 20),
             Text(
               title,
-              style: GoogleFonts.lemonada(fontSize: 18),
+              style: TextStyle(fontSize: 18),
             ),
             Spacer(),
           ],
