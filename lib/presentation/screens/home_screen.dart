@@ -1,6 +1,7 @@
 import 'package:agro_doc/presentation/constants.dart';
-import 'package:agro_doc/presentation/screens/inspect_page.dart';
 import 'package:agro_doc/presentation/widgets/custom_floating_action_button.dart';
+import 'package:agro_doc/routes/router.gr.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:agro_doc/presentation/widgets/my_navigation_bar.dart';
@@ -24,7 +25,8 @@ class HomeScreen extends StatelessWidget {
             height: 80,
             width: 80,
             onTap: () {
-              Navigator.pushNamed(context, InspectPage.pathId, arguments: 1);
+              AutoRouter.of(context)
+                  .push(InspectPageRoute(selectedIconIndex: 1));
             },
           ),
           ContainerWidget(
@@ -33,7 +35,8 @@ class HomeScreen extends StatelessWidget {
             height: 80,
             width: 80,
             onTap: () {
-              Navigator.pushNamed(context, InspectPage.pathId, arguments: 2);
+              AutoRouter.of(context)
+                  .push(InspectPageRoute(selectedIconIndex: 2));
             },
           ),
           ContainerWidget(
@@ -42,7 +45,8 @@ class HomeScreen extends StatelessWidget {
             height: 80,
             width: 80,
             onTap: () {
-              Navigator.pushNamed(context, InspectPage.pathId, arguments: 3);
+              AutoRouter.of(context)
+                  .push(InspectPageRoute(selectedIconIndex: 3));
             },
           ),
           SizedBox(height: 5),

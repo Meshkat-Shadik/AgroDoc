@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class InspectPage extends StatefulWidget {
-  static const pathId = "/inspect-page";
   final int selectedIconIndex;
   const InspectPage({Key? key, required this.selectedIconIndex})
       : super(key: key);
