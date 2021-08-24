@@ -1,10 +1,9 @@
 import 'package:agro_doc/presentation/constants.dart';
+import 'package:agro_doc/presentation/screens/common_disease_screen.dart';
 import 'package:agro_doc/presentation/widgets/animated_circle_button.dart';
 import 'package:agro_doc/presentation/widgets/custom_floating_action_button.dart';
 import 'package:agro_doc/presentation/widgets/my_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class InspectPage extends StatefulWidget {
   final int selectedIconIndex;
   const InspectPage({Key? key, required this.selectedIconIndex})
@@ -82,38 +81,65 @@ class _InspectPageState extends State<InspectPage> {
                   ],
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: containerBgColor,
-                  borderRadius: BorderRadius.all(Radius.circular(40)),
-                  boxShadow: boxShadowColors,
-                ),
-                height: size.height / 1.52,
-                width: double.infinity,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    InspectPageContainer(
-                      title: 'Camera',
-                      imgUrl: "assets/images/cameraIcon.png",
-                      width: size.width / 1.16,
-                    ),
-                    InspectPageContainer(
-                      title: 'Gallery',
-                      imgUrl: "assets/images/galleryIcon.png",
-                      width: size.width / 1.16,
-                    ),
-                    InspectPageContainer(
-                      title: 'ANN based\nAnalysis',
-                      imgUrl: "assets/images/analysisIcon.png",
-                      width: size.width / 1.16,
-                    ),
-                  ],
+              SingleChildScrollView(
+                physics: NeverScrollableScrollPhysics(),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: containerBgColor,
+                    borderRadius: BorderRadius.all(Radius.circular(40)),
+                    boxShadow: boxShadowColors,
+                  ),
+                  height: size.height / 1.52,
+                  width: double.infinity,
+                  child: selected == 1
+                      ? InspectPageContent(size: size)
+                      : selected == 2
+                          ? CommonDisease()
+                          : Container(),
                 ),
               )
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class InspectPageContent extends StatelessWidget {
+  const InspectPageContent({
+    Key? key,
+    required this.size,
+  }) : super(key: key);
+
+  final Size size;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          SizedBox(height: 20),
+          InspectPageContainer(
+            title: 'Camera',
+            imgUrl: "assets/images/cameraIcon.png",
+            width: size.width / 1.16,
+          ),
+          SizedBox(height: 20),
+          InspectPageContainer(
+            title: 'Gallery',
+            imgUrl: "assets/images/galleryIcon.png",
+            width: size.width / 1.16,
+          ),
+          SizedBox(height: 20),
+          InspectPageContainer(
+            title: 'ANN based\nAnalysis',
+            imgUrl: "assets/images/analysisIcon.png",
+            width: size.width / 1.16,
+          ),
+          SizedBox(height: 20),
+        ],
       ),
     );
   }

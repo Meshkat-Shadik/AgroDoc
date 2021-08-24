@@ -14,8 +14,8 @@ class MyBottomNavigationBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back_ios)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
+          IconButton(onPressed: () {}, icon: Icon(Icons.help_outline)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.info_outline_rounded)),
         ],
       ),
     );

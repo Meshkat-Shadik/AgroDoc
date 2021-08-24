@@ -3,7 +3,6 @@ import 'package:agro_doc/presentation/widgets/custom_floating_action_button.dart
 import 'package:agro_doc/routes/router.gr.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:agro_doc/presentation/widgets/my_navigation_bar.dart';
 
 class HomeScreen extends StatelessWidget {
