@@ -3,7 +3,10 @@ import 'package:agro_doc/presentation/screens/common_disease_screen.dart';
 import 'package:agro_doc/presentation/widgets/animated_circle_button.dart';
 import 'package:agro_doc/presentation/widgets/custom_floating_action_button.dart';
 import 'package:agro_doc/presentation/widgets/my_navigation_bar.dart';
+import 'package:agro_doc/presentation/workers/image_pick.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
 class InspectPage extends StatefulWidget {
   final int selectedIconIndex;
   const InspectPage({Key? key, required this.selectedIconIndex})
@@ -125,18 +128,25 @@ class InspectPageContent extends StatelessWidget {
             title: 'Camera',
             imgUrl: "assets/images/cameraIcon.png",
             width: size.width / 1.16,
+            onPress: () async {
+              grabImage(ImageSource.camera);
+            },
           ),
           SizedBox(height: 20),
           InspectPageContainer(
             title: 'Gallery',
             imgUrl: "assets/images/galleryIcon.png",
             width: size.width / 1.16,
+            onPress: () async {
+              grabImage(ImageSource.gallery);
+            },
           ),
           SizedBox(height: 20),
           InspectPageContainer(
             title: 'ANN based\nAnalysis',
             imgUrl: "assets/images/analysisIcon.png",
             width: size.width / 1.16,
+            onPress: () {},
           ),
           SizedBox(height: 20),
         ],
@@ -150,40 +160,44 @@ class InspectPageContainer extends StatelessWidget {
     required this.title,
     required this.imgUrl,
     required this.width,
+    required this.onPress,
     Key? key,
   }) : super(key: key);
 
   final String imgUrl;
   final String title;
   final double width;
-
+  final onPress;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 132,
-      width: width / 1.16,
-      decoration: BoxDecoration(
-        color: bottomNavBgColor,
-        borderRadius: BorderRadius.all(Radius.circular(25)),
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              padding: EdgeInsets.only(top: 20),
-              child: Image.asset(
-                imgUrl,
+    return GestureDetector(
+      onTap: onPress,
+      child: Container(
+        height: 132,
+        width: width / 1.16,
+        decoration: BoxDecoration(
+          color: bottomNavBgColor,
+          borderRadius: BorderRadius.all(Radius.circular(25)),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 30),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: EdgeInsets.only(top: 20),
+                child: Image.asset(
+                  imgUrl,
+                ),
               ),
-            ),
-            SizedBox(width: 20),
-            Text(
-              title,
-              style: TextStyle(fontSize: 18),
-            ),
-            Spacer(),
-          ],
+              SizedBox(width: 20),
+              Text(
+                title,
+                style: TextStyle(fontSize: 18),
+              ),
+              Spacer(),
+            ],
+          ),
         ),
       ),
     );
